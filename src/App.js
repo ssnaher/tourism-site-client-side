@@ -14,6 +14,7 @@ import AuthProvider from './Contexts/AuthProvider';
 import Register from './Pages/LoginPage/Firebase/Register/Register';
 import PrivateRoute from './Pages/LoginPage/Firebase/Login/PrivateRoute/PrivateRoute';
 import About from './Pages/Home/About/About';
+import AddPackage from './Pages/AddPackage/AddPackage';
 ;
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
             <PrivateRoute path="/booking/:packageId">
               <Booking></Booking>
             </PrivateRoute>
+            <Route path="/addPackage">
+              <AddPackage></AddPackage>
+            </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
