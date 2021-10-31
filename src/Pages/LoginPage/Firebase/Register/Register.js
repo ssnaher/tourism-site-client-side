@@ -9,15 +9,7 @@ const Register = () => {
     return (
         <div>
             <h1>Register here</h1>
-            <form onSubmit="">
-                <input type="email" name="" id="" />
-                <br />
-                <br />
-                <input type="password" name="" id="" />
-                <br />
-                <br />
-                <input type="submit" value="submit" />
-            </form>
+
             <p>Already have an account? <Link to="/login">Create Account</Link></p>
             <br /><br />
             <button onClick={signInUsingGoogle} className="btn btn-danger">Google Sign In</button>
