@@ -15,6 +15,7 @@ import Register from './Pages/LoginPage/Firebase/Register/Register';
 import PrivateRoute from './Pages/LoginPage/Firebase/Login/PrivateRoute/PrivateRoute';
 import About from './Pages/Home/About/About';
 import AddPackage from './Pages/AddPackage/AddPackage';
+import ManagePackages from './Pages/ManagePackages/ManagePackages';
 ;
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
             </PrivateRoute>
             <Route path="/addPackage">
               <AddPackage></AddPackage>
+            </Route>
+            <Route path="/managePackages">
+              <ManagePackages></ManagePackages>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
