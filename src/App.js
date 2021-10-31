@@ -1,23 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Pages/Home/Home/Home';
+import Header from './Shared/Header/Header';
+import Footer from './Shared/Footer/Footer';
+import Login from './Pages/LoginPage/Firebase/Login/Login';
+import NotFound from './Pages/NotFound/NotFound';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"; import Packages from './Pages/Home/Packages/Packages';
+import Booking from './Pages/Home/Booking/Booking';
+import AuthProvider from './Contexts/AuthProvider';
+import Register from './Pages/LoginPage/Firebase/Register/Register';
+import PrivateRoute from './Pages/LoginPage/Firebase/Login/PrivateRoute/PrivateRoute';
+;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <Route path="/packages">
+              <Packages></Packages>
+            </Route>
+            <PrivateRoute path="/booking/:packageId">
+              <Booking></Booking>
+            </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
