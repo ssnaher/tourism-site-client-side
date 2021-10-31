@@ -13,7 +13,7 @@ const SinglePackage = ({ packages }) => {
                 <h2>Price: {price}</h2>
                 <h5>Time: {time} days</h5>
                 <Link to={`/booking/${key}`}>
-                    <button className="btn btn-danger my-3">Learn More</button>
+                    <button className="btn btn-danger my-3">Book Now</button>
                 </Link>
             </div>
         </div>
