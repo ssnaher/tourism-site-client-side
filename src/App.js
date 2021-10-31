@@ -13,6 +13,7 @@ import Booking from './Pages/Home/Booking/Booking';
 import AuthProvider from './Contexts/AuthProvider';
 import Register from './Pages/LoginPage/Firebase/Register/Register';
 import PrivateRoute from './Pages/LoginPage/Firebase/Login/PrivateRoute/PrivateRoute';
+import About from './Pages/Home/About/About';
 ;
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/about">
+              <About></About>
             </Route>
             <Route path="/packages">
               <Packages></Packages>
