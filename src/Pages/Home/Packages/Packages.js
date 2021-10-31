@@ -6,7 +6,7 @@ const Packages = () => {
 
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch('packages.json')
+        fetch('http://localhost:5000/packages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])
@@ -18,7 +18,7 @@ const Packages = () => {
                 <div className="service-section row">
                     {
                         packages.map(packages => <SinglePackage
-                            key={packages.key}
+                            key={packages._id}
                             packages={packages}
                         ></SinglePackage>)
                     }
